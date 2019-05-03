@@ -1,21 +1,58 @@
-// 282 Project 8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// 282 Project 8.cpp
 //
 
 #include "pch.h"
 #include <iostream>
+#include "Account.h"
+#include "CheckingAccount.h"
+#include "SavingsAccount.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	Account acc(100);
+	CheckingAccount cAcc(100,.15);
+	SavingsAccount sAcc(100,.01);
+
+	cout << "Base Account Tester:" << endl;
+	cout << "Acc balance: $" << acc.getBalance() << endl;
+	cout << "Deposit $10 into Acc." << endl;
+	acc.deposit(10);
+	cout << "Acc balance: $" << acc.getBalance() << endl;
+	cout << "Withdraw $20 from Acc." << endl;
+	acc.withdraw(20);
+	cout << "Acc balance: $" << acc.getBalance() << endl;
+	cout << "Withdraw $100 from acc." << endl;
+	acc.withdraw(1000);
+	cout << endl << "Acc balance: $" << acc.getBalance() << endl;
+
+	cout << endl << "Checking Account Tester: " << endl;
+	cout << "cAcc balance: $" << cAcc.getBalance() << endl;
+	cout << "cAcc fee: $" << cAcc.getFee() << endl;
+	cout << "Deposit $10 into cAcc." << endl;
+	cAcc.deposit(10);
+	cout << "cAcc balance: $" << cAcc.getBalance() << endl;
+	cout << "Withdraw $20 from cAcc." << endl;
+	cAcc.withdraw(20);
+	cout << "Acc balance: $" << cAcc.getBalance() << endl;
+	cout << "Withdraw $89.70 from cAcc." << endl;
+	cAcc.withdraw(89.70);
+	cout << endl << "Acc balance: $" << cAcc.getBalance() << endl;
+	cout << "Withdraw $89.54 from cAcc." << endl;
+	cAcc.withdraw(89.54);
+	cout << endl << "Acc balance: $" << cAcc.getBalance() << endl;
+
+	cout << endl << "Savings Account Tester: " << endl;
+	cout << "sAcc balance: $" << sAcc.getBalance() << endl;
+	cout << "sAcc interestRate: " << sAcc.getInterestRate() << endl;
+	cout << "Deposit $10 into sAcc." << endl;
+	sAcc.deposit(10);
+	cout << "sAcc balance: $" << sAcc.getBalance() << endl;
+	cout << "Withdraw $20 from sAcc." << endl;
+	sAcc.withdraw(20);
+	cout << "sAcc balance: $" << sAcc.getBalance() << endl;
+	cout << "sAcc interest: $" << sAcc.calculateInterest();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
