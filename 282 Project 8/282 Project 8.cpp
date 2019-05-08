@@ -13,12 +13,12 @@ using namespace std;
 
 int main()
 {
-	Account acc(100);
 	CheckingAccount cAcc(100,.15);
 	SavingsAccount sAcc(100,.01);
 
 	cout << "Base Account Tester:" << endl;
-	cout << "Acc balance: $" << acc.getBalance() << endl;
+	Account acc(-10);
+	cout << "\n" << "Acc balance: $" << acc.getBalance() << endl;
 	cout << "Deposit $10 into Acc." << endl;
 	acc.deposit(10);
 	cout << "Acc balance: $" << acc.getBalance() << endl;
